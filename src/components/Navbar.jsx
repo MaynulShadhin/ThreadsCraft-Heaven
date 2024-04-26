@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/FirebaseProvider";
 
 const Navbar = () => {
 
@@ -6,6 +8,8 @@ const Navbar = () => {
         <NavLink to="/" className={({ isActive }) => isActive ? "text-xl mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-xl mr-4 font-semi-bold hover:text-orange-500 pb-2"}>Home</NavLink>
         <NavLink to="/All Art & craft Items" className={({ isActive }) => isActive ? "text-xl mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-xl mr-4 font-semi-bold hover:text-orange-500 pb-2"}>All Art & craft Items</NavLink>
     </>
+
+    const { logout, user } = useContext(AuthContext)
 
     return (
         <div className="navbar bg-amber-300 px-0 md:px-8 py-0 md:py-4">
@@ -25,10 +29,26 @@ const Navbar = () => {
                     {navLinks}
                 </ul>
             </div>
-            <div className="navbar-end space-x-2">
-                <Link to="/register"><button className="btn">Sign Up</button></Link>
-                <Link to="/login"><button className="btn">Sign In</button></Link>
-
+            <div className="navbar-end">
+                {
+                    user?.email ? <div className="dropdown dropdown-end">
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-11 rounded-full">
+                                <img title={user?.displayName} src={user?.photoURL || "https://i.ibb.co/Wyry2pC/user.png"} />
+                            </div>
+                        </label>
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52">
+                            <li>
+                                <button className="btn btn-sm btn-ghost" onClick={logout}>Logout</button>
+                            </li>
+                        </ul>
+                    </div>
+                        :
+                        <div className="space-x-2">
+                            <Link to="/register"><button className="btn">Sign Up</button></Link>
+                            <Link to="/login"><button className="btn">Sign In</button></Link>
+                        </div>
+                }
             </div>
         </div>
     );

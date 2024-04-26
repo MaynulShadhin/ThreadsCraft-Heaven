@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const [error, setError] = useState('')
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser,updateUser } = useContext(AuthContext);
 
     const {
         register,
@@ -36,14 +36,17 @@ const Register = () => {
         //Create User
         createUser(email,password)
         .then(()=>{
-            toast.success('Registration Successful');
+            updateUser(fullName,image)
+            .then(()=>{
+                toast.success('Registration Successful');
+            })
         })
         .catch(()=>{
             setError("email already in use")
         })
     }
     return (
-        <div className="w-[450px] mx-auto border-2 border-amber-500 px-12 py-4 mt-12 bg-amber-50">
+        <div className="md:w-[450px] mx-2 md:mx-auto border-2 border-amber-500 px-12 py-4 mt-12 bg-amber-50">
             <div className="text-center mb-6">
                 <h2 className="text-5xl font-bold mb-4">Register</h2>
                 <p className="text-lg">Join, engage, connect, explore, discover, share, interact, community, updates, exclusive.</p>

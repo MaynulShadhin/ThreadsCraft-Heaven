@@ -6,7 +6,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
     const [error, setError] = useState('')
-    const { signInUser } = useContext(AuthContext)
+    const { signInUser,googleLogin } = useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -23,8 +23,20 @@ const Login = () => {
                 setError("Please Check Your Email And Password")
             })
     }
+
+    //google sign In
+    const handleGoogleSignIn = ()=>{
+        googleLogin()
+        .then(()=>{
+            toast.success("Login Successful");
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
+
     return (
-        <div className="w-[450px] mx-auto border-2 border-amber-500 px-12 py-4 mt-12 bg-amber-50">
+        <div className="md:w-[450px] mx-2 md:mx-auto border-2 border-amber-500 px-12 py-4 mt-12 bg-amber-50">
             <div className="text-center mb-6">
                 <h2 className="text-5xl font-bold mb-4">Sign In</h2>
                 <p className="text-lg">Securely access your personalized account for exclusive content and updates</p>
@@ -60,7 +72,7 @@ const Login = () => {
                     <ToastContainer></ToastContainer>
                 </form>
                 <div className="text-center flex items-center justify-around text-2xl">
-                    <button><FaGoogle></FaGoogle></button>
+                    <button onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button>
                     <button><FaGithub></FaGithub></button>
                 </div>
             </div>
