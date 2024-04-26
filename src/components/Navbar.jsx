@@ -26,8 +26,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end space-x-2">
-                <Link to="/register"><a className="btn">Sign Up</a></Link>
-                <Link><a className="btn">Sign In</a></Link>
+                <Link to="/register"><button className="btn">Sign Up</button></Link>
+                <Link to="/login"><button className="btn">Sign In</button></Link>
 
             </div>
         </div>

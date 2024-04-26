@@ -9,12 +9,14 @@ import Root from './layouts/Root';
 import Home from './pages/Home';
 import AllArtAndCraft from './pages/AllArtAndCraft';
 import Register from './pages/Register';
+import FirebaseProvider from './provider/FirebaseProvider';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    children:[
+    children: [
       {
         path: "/",
         element: <Home></Home>
@@ -26,13 +28,20 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
       }
+      
     ]
   },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <FirebaseProvider>
+      <RouterProvider router={router} />
+    </FirebaseProvider>
   </React.StrictMode>,
 )
