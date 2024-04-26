@@ -43,7 +43,7 @@ const Register = () => {
         })
     }
     return (
-        <div className="w-[450px] mx-auto border-2 px-12 py-4 mt-12">
+        <div className="w-[450px] mx-auto border-2 border-amber-500 px-12 py-4 mt-12 bg-amber-50">
             <div className="text-center mb-6">
                 <h2 className="text-5xl font-bold mb-4">Register</h2>
                 <p className="text-lg">Join, engage, connect, explore, discover, share, interact, community, updates, exclusive.</p>

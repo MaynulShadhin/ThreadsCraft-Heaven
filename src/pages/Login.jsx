@@ -2,10 +2,11 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../provider/FirebaseProvider";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
     const [error, setError] = useState('')
-    const {signInUser} = useContext(AuthContext)
+    const { signInUser } = useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -13,17 +14,17 @@ const Login = () => {
     } = useForm()
 
     const onSubmit = (data) => {
-        const {email,password} = data
-        signInUser(email,password)
-        .then(()=>{
-            toast.success("Login Successful")
-        })
-        .catch(()=>{
-            setError("Please Check Your Email And Password")
-        })
+        const { email, password } = data
+        signInUser(email, password)
+            .then(() => {
+                toast.success("Login Successful")
+            })
+            .catch(() => {
+                setError("Please Check Your Email And Password")
+            })
     }
     return (
-        <div className="w-[450px] mx-auto border-2 px-12 py-4 mt-12">
+        <div className="w-[450px] mx-auto border-2 border-amber-500 px-12 py-4 mt-12 bg-amber-50">
             <div className="text-center mb-6">
                 <h2 className="text-5xl font-bold mb-4">Sign In</h2>
                 <p className="text-lg">Securely access your personalized account for exclusive content and updates</p>
@@ -53,11 +54,15 @@ const Login = () => {
                         error && <p className="text-red-600 text-center mb-2">{error}</p>
                     }
                     <div>
-                        
+
                         <input type="submit" value="Register" className="text-lg font-semibold text-center w-full bg-amber-300 py-3 rounded-xl hover:bg-amber-200" />
                     </div>
                     <ToastContainer></ToastContainer>
                 </form>
+                <div className="text-center flex items-center justify-around text-2xl">
+                    <button><FaGoogle></FaGoogle></button>
+                    <button><FaGithub></FaGithub></button>
+                </div>
             </div>
         </div>
     );
