@@ -8,6 +8,7 @@ import './index.css'
 import Root from './layouts/Root';
 import Home from './pages/Home';
 import AllArtAndCraft from './pages/AllArtAndCraft';
+import Register from './pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/All Art & craft Items",
         element: <AllArtAndCraft></AllArtAndCraft>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
       }
     ]
   },
