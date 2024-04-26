@@ -11,6 +11,7 @@ import AllArtAndCraft from './pages/AllArtAndCraft';
 import Register from './pages/Register';
 import FirebaseProvider from './provider/FirebaseProvider';
 import Login from './pages/Login';
+import AddCraftItem from './pages/AddCraftItem';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>
+      },
+      {
+        path:"/Add Craft Item",
+        element: <AddCraftItem></AddCraftItem>
       }
       
     ]
