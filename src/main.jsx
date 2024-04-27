@@ -16,11 +16,13 @@ import ItemDetails from './pages/ItemDetails';
 import MyArtAndCraft from './pages/MyArtAndCraft';
 import UpdateItem from './pages/UpdateItem';
 import PrivateRoute from './components/private route/PrivateRoute';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
