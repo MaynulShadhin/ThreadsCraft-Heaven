@@ -12,6 +12,8 @@ import Register from './pages/Register';
 import FirebaseProvider from './provider/FirebaseProvider';
 import Login from './pages/Login';
 import AddCraftItem from './pages/AddCraftItem';
+import ItemDetails from './pages/ItemDetails';
+import MyArtAndCraft from './pages/MyArtAndCraft';
 
 const router = createBrowserRouter([
   {
@@ -20,11 +22,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/item')
       },
       {
         path: "/All Art & craft Items",
-        element: <AllArtAndCraft></AllArtAndCraft>
+        element: <AllArtAndCraft></AllArtAndCraft>,
+        loader: () => fetch('http://localhost:5000/item')
       },
       {
         path: "/register",
@@ -35,10 +39,19 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path:"/Add Craft Item",
+        path: "/Add Craft Item",
         element: <AddCraftItem></AddCraftItem>
+      },
+      {
+        path: "/itemDetails/:id",
+        element: <ItemDetails></ItemDetails>,
+        loader: () => fetch('http://localhost:5000/item')
+      },
+      {
+        path: "/myArtAndCraft",
+        element: <MyArtAndCraft></MyArtAndCraft>
       }
-      
+
     ]
   },
 ])

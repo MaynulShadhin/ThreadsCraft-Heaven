@@ -8,6 +8,7 @@ const Navbar = () => {
         <NavLink to="/" className={({ isActive }) => isActive ? "text-xl mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-xl mr-4 font-semi-bold hover:text-orange-500 pb-2"}>Home</NavLink>
         <NavLink to="/All Art & craft Items" className={({ isActive }) => isActive ? "text-xl mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-xl mr-4 font-semi-bold hover:text-orange-500 pb-2"}>All Art & craft Items</NavLink>
         <NavLink to="/Add Craft Item" className={({ isActive }) => isActive ? "text-xl mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-xl mr-4 font-semi-bold hover:text-orange-500 pb-2"}>Add Craft Item</NavLink>
+        <NavLink to="/myArtAndCraft" className={({ isActive }) => isActive ? "text-xl mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-xl mr-4 font-semi-bold hover:text-orange-500 pb-2"}>My Art and Craft</NavLink>
     </>
 
     const { logout, user } = useContext(AuthContext)
