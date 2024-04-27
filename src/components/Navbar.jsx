@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/FirebaseProvider";
+import DarkMode from "./DarkMode";
 
 const Navbar = () => {
     const { logout, user } = useContext(AuthContext)
@@ -31,7 +32,14 @@ const Navbar = () => {
                     {navLinks}
                 </ul>
             </div>
+
             <div className="navbar-end">
+                {/* toggle mode */}
+                <div className="mr-2">
+                    <DarkMode></DarkMode>
+                </div>
+
+
                 {
                     user?.email ? <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -46,7 +54,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                         :
-                        <div className="space-x-2">
+                        <div className="flex space-x-2">
                             <Link to="/register"><button className="btn">Sign Up</button></Link>
                             <Link to="/login"><button className="btn">Sign In</button></Link>
                         </div>

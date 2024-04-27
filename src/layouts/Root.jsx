@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 const Root = () => {
     return (
-        <div className="font-roboto">
+        <div className="font-roboto App-header">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
