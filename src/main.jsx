@@ -15,6 +15,7 @@ import AddCraftItem from './pages/AddCraftItem';
 import ItemDetails from './pages/ItemDetails';
 import MyArtAndCraft from './pages/MyArtAndCraft';
 import UpdateItem from './pages/UpdateItem';
+import PrivateRoute from './components/private route/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -45,14 +46,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/itemDetails/:id",
-        element: <ItemDetails></ItemDetails>,
+        element: <PrivateRoute>
+          <ItemDetails></ItemDetails>
+        </PrivateRoute>,
       },
       {
         path: "/myArtAndCraft",
         element: <MyArtAndCraft></MyArtAndCraft>
       },
       {
-        path:"/updateItem/:id",
+        path: "/updateItem/:id",
         element: <UpdateItem></UpdateItem>
       }
 

@@ -3,10 +3,15 @@ import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../provider/FirebaseProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [error, setError] = useState('')
     const { signInUser,googleLogin } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state || '/'
+
     const {
         register,
         handleSubmit,
@@ -18,6 +23,7 @@ const Login = () => {
         signInUser(email, password)
             .then(() => {
                 toast.success("Login Successful")
+                navigate(from);
             })
             .catch(() => {
                 setError("Please Check Your Email And Password")
@@ -29,6 +35,7 @@ const Login = () => {
         googleLogin()
         .then(()=>{
             toast.success("Login Successful");
+            navigate(from);
         })
         .catch(error=>{
             console.log(error)
@@ -71,7 +78,9 @@ const Login = () => {
                     </div>
                     <ToastContainer></ToastContainer>
                 </form>
-                <div className="text-center flex items-center justify-around text-2xl">
+                <h2 className="text-center mb-4">Do not have an Account <Link className="font-bold" to="/register">Register</Link></h2>
+                <p className="text-center mb-4">-------------OR--------------</p>
+                <div className="text-center flex items-center justify-around text-3xl mb-4">
                     <button onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button>
                     <button><FaGithub></FaGithub></button>
                 </div>

@@ -4,11 +4,15 @@ import { IoMdPhotos } from "react-icons/io";
 import { AuthContext } from "../provider/FirebaseProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const [error, setError] = useState('')
 
     const { createUser,updateUser } = useContext(AuthContext);
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state || '/'
 
     const {
         register,
@@ -39,6 +43,7 @@ const Register = () => {
             updateUser(fullName,image)
             .then(()=>{
                 toast.success('Registration Successful');
+                navigate(from);
             })
         })
         .catch(()=>{
@@ -99,6 +104,7 @@ const Register = () => {
                     </div>
                     <ToastContainer></ToastContainer>
                 </form>
+                <h2 className="text-center">Already have an account <Link to="/login" className="font-bold">Login</Link></h2>
             </div>
         </div>
     );

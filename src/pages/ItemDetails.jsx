@@ -22,7 +22,7 @@ const ItemDetails = () => {
                 <p className="text-xl ml-2 mb-8">{subcategory}</p>
             </div>
             <div>
-                <img src={image} alt="" />
+                <img className="md:w-[1000px] md:h-[800px] object-cover" src={image} alt="" />
             </div>
             <div className="my-4">
                 <p className="bg-amber-300 px-4 py-3 rounded-sm mb-2 font-bold text-2xl">Description</p>
