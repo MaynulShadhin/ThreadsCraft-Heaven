@@ -21,7 +21,6 @@ const AddCraftItem = () => {
         const stock = form.stock.value;
         const image = form.image.value;
         const email = user.email;
-        console.log(email)
 
         const newItem = { name, subcategory, description, price, rating, customization, time, stock, image, email }
         console.log(newItem)

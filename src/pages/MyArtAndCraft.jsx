@@ -5,7 +5,8 @@ import MySingleItem from "../components/MySingleItem";
 const MyArtAndCraft = () => {
 
     const { user } = useContext(AuthContext) || {}
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState([]);
+
 
     useEffect(() => {
         fetch(`http://localhost:5000/item/${user?.email}`)
@@ -20,7 +21,7 @@ const MyArtAndCraft = () => {
             <h2 className="text-center text-3xl font-bold mb-8">My Art And Craft</h2>
             <div className="grid grid-cols-1 gap-8">
                 {
-                    items.map(item => <MySingleItem key={item._id} item={item}></MySingleItem>)
+                    items.map(item => <MySingleItem key={item._id} item={item} items={items} setItems={setItems}></MySingleItem>)
                 }
             </div>
         </div>
