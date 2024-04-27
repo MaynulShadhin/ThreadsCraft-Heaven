@@ -42,7 +42,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/Add Craft Item",
-        element: <AddCraftItem></AddCraftItem>
+        element: <PrivateRoute>
+          <AddCraftItem></AddCraftItem>
+        </PrivateRoute>
       },
       {
         path: "/itemDetails/:id",
@@ -52,7 +54,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/myArtAndCraft",
-        element: <MyArtAndCraft></MyArtAndCraft>
+        element: <PrivateRoute>
+          <MyArtAndCraft></MyArtAndCraft>
+        </PrivateRoute>
       },
       {
         path: "/updateItem/:id",

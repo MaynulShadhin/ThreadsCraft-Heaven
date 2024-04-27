@@ -3,16 +3,16 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/FirebaseProvider";
 
 const Navbar = () => {
-
-    const navLinks = <>
-        <NavLink to="/" className={({ isActive }) => isActive ? "text-xl mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-xl mr-4 font-semi-bold hover:text-orange-500 pb-2"}>Home</NavLink>
-        <NavLink to="/All Art & craft Items" className={({ isActive }) => isActive ? "text-xl mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-xl mr-4 font-semi-bold hover:text-orange-500 pb-2"}>All Art & craft Items</NavLink>
-        <NavLink to="/Add Craft Item" className={({ isActive }) => isActive ? "text-xl mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-xl mr-4 font-semi-bold hover:text-orange-500 pb-2"}>Add Craft Item</NavLink>
-        <NavLink to="/myArtAndCraft" className={({ isActive }) => isActive ? "text-xl mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-xl mr-4 font-semi-bold hover:text-orange-500 pb-2"}>My Art and Craft</NavLink>
-    </>
-
     const { logout, user } = useContext(AuthContext)
 
+    const navLinks = <>
+        <NavLink to="/" className={({ isActive }) => isActive ? "text-lg mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-lg mr-4 font-semi-bold hover:text-orange-500 pb-2"}>Home</NavLink>
+        <NavLink to="/All Art & craft Items" className={({ isActive }) => isActive ? "text-lg mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-lg mr-4 font-semi-bold hover:text-orange-500 pb-2"}>All Art & craft Items</NavLink>
+        <NavLink to="/Add Craft Item" className={({ isActive }) => isActive ? "text-lg mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-lg mr-4 font-semi-bold hover:text-orange-500 pb-2"}>Add Craft Item</NavLink>
+        {
+            user && <NavLink to="/myArtAndCraft" className={({ isActive }) => isActive ? "text-lg mr-4 font-semi-bold border-b-2 border-orange-500 text-orange-500 pb-2" : "text-lg mr-4 font-semi-bold hover:text-orange-500 pb-2"}>My Art and Craft</NavLink>
+        }
+    </>
     return (
         <div className="navbar bg-amber-300 px-0 md:px-8 py-0 md:py-4">
             <div className="navbar-start">
