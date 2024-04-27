@@ -14,6 +14,7 @@ import Login from './pages/Login';
 import AddCraftItem from './pages/AddCraftItem';
 import ItemDetails from './pages/ItemDetails';
 import MyArtAndCraft from './pages/MyArtAndCraft';
+import UpdateItem from './pages/UpdateItem';
 
 const router = createBrowserRouter([
   {
@@ -45,11 +46,14 @@ const router = createBrowserRouter([
       {
         path: "/itemDetails/:id",
         element: <ItemDetails></ItemDetails>,
-        loader: () => fetch('http://localhost:5000/item')
       },
       {
         path: "/myArtAndCraft",
         element: <MyArtAndCraft></MyArtAndCraft>
+      },
+      {
+        path:"/updateItem/:id",
+        element: <UpdateItem></UpdateItem>
       }
 
     ]

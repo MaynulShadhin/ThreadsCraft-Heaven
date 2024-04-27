@@ -1,9 +1,18 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const ItemDetails = () => {
-    const items = useLoaderData()
-    const { id } = useParams()
-    const item = items.find(item => item._id === id)
+    const { id } = useParams();
+    const [item, setItem] = useState({})
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/singleItem/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setItem(data)
+                console.log(data)
+            })
+    }, [id])
     const { name, subcategory, description, price, rating, customization, time, stock, image } = item
 
     return (
