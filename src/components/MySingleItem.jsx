@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-const MySingleItem = ({ item,setItems }) => {
+const MySingleItem = ({ item, setDisplayItems }) => {
     const { _id, name, subcategory, description, price, rating, customization, time, stock, image } = item
 
     const handleDelete = (_id) => {
@@ -27,7 +27,7 @@ const MySingleItem = ({ item,setItems }) => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
-                            setItems(prevItems => prevItems.filter(item => item._id !== _id));
+                            setDisplayItems(prevItems => prevItems.filter(item => item._id !== _id));
                         }
                     })
             }
@@ -62,7 +62,7 @@ const MySingleItem = ({ item,setItems }) => {
 
 MySingleItem.propTypes = {
     item: PropTypes.object,
-    setItems: PropTypes.func
+    setDisplayItems: PropTypes.func
 }
 
 export default MySingleItem;
