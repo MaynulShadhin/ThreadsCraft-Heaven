@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-const MySingleItem = ({ item,items,setItems }) => {
+const MySingleItem = ({ item,setItems }) => {
     const { _id, name, subcategory, description, price, rating, customization, time, stock, image } = item
 
     const handleDelete = (_id) => {
@@ -62,7 +62,6 @@ const MySingleItem = ({ item,items,setItems }) => {
 
 MySingleItem.propTypes = {
     item: PropTypes.object,
-    items:PropTypes.array,
     setItems: PropTypes.func
 }
 

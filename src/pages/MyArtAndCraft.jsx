@@ -21,7 +21,7 @@ const MyArtAndCraft = () => {
             <h2 className="text-center text-3xl font-bold mb-8">My Art And Craft</h2>
             <div className="grid grid-cols-1 gap-8">
                 {
-                    items.map(item => <MySingleItem key={item._id} item={item} items={items} setItems={setItems}></MySingleItem>)
+                    items.map(item => <MySingleItem key={item._id} item={item} setItems={setItems}></MySingleItem>)
                 }
             </div>
         </div>
