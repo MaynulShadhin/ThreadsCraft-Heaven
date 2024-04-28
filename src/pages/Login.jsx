@@ -80,9 +80,9 @@ const Login = () => {
                 </form>
                 <h2 className="text-center mb-4">Do not have an Account <Link className="font-bold" to="/register">Register</Link></h2>
                 <p className="text-center mb-4">-------------OR--------------</p>
-                <div className="text-center flex items-center justify-around text-3xl mb-4">
-                    <button onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button>
-                    <button><FaGithub></FaGithub></button>
+                <div className="text-center flex items-center justify-around mb-4">
+                    <button className="btn btn-ghost text-3xl" onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button>
+                    <button className="btn btn-ghost text-3xl"><FaGithub></FaGithub></button>
                 </div>
             </div>
         </div>

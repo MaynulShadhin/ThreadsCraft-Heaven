@@ -2,7 +2,7 @@ import { FaFacebookSquare, FaGithub, FaInstagram } from "react-icons/fa";
 import { TbNeedleThread } from "react-icons/tb";
 const Footer = () => {
     return (
-        <footer className="p-10 bg-amber-300 text-neutral-content mt-10">
+        <footer className="p-10 bg-amber-300 text-neutral-content">
             <div className="md:flex justify-around w-full p-4">
             <aside>
                 <TbNeedleThread className="text-4xl font-bold text-black"></TbNeedleThread>
