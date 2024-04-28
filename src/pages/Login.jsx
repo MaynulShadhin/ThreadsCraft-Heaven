@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [error, setError] = useState('')
-    const { signInUser,googleLogin } = useContext(AuthContext)
+    const { signInUser, googleLogin, githubLogin } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state || '/'
@@ -31,15 +31,28 @@ const Login = () => {
     }
 
     //google sign In
-    const handleGoogleSignIn = ()=>{
+    const handleGoogleSignIn = () => {
         googleLogin()
-        .then(()=>{
-            toast.success("Login Successful");
-            navigate(from);
-        })
-        .catch(error=>{
-            console.log(error)
-        })
+            .then(() => {
+                toast.success("Login Successful");
+                navigate(from);
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    //github sign In
+
+    const handleGithubSignIn = () => {
+        githubLogin()
+            .then(() => {
+                toast.success("Login Successful");
+                navigate(from);
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     return (
@@ -82,7 +95,7 @@ const Login = () => {
                 <p className="text-center mb-4">-------------OR--------------</p>
                 <div className="text-center flex items-center justify-around mb-4">
                     <button className="btn btn-ghost text-3xl" onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button>
-                    <button className="btn btn-ghost text-3xl"><FaGithub></FaGithub></button>
+                    <button className="btn btn-ghost text-3xl" onClick={handleGithubSignIn}><FaGithub></FaGithub></button>
                 </div>
             </div>
         </div>
