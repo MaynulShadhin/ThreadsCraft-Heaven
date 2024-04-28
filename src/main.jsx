@@ -17,6 +17,7 @@ import MyArtAndCraft from './pages/MyArtAndCraft';
 import UpdateItem from './pages/UpdateItem';
 import PrivateRoute from './components/private route/PrivateRoute';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import FilteredSubCategory from './pages/FilteredSubCategory';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "/updateItem/:id",
         element: <UpdateItem></UpdateItem>
+      },
+      {
+        path: "/subcategory/:subcategory",
+        element: <FilteredSubCategory></FilteredSubCategory> 
       }
 
     ]

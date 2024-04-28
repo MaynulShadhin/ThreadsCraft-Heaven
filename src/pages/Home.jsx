@@ -1,6 +1,7 @@
 import Banner from "../components/Banner";
 import ContactUs from "../components/ContactUs";
 import CraftItems from "../components/CraftItems";
+import Subcategories from "../components/Subcategories";
 import ThingsYouLove from "../components/ThingsYouLove";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
         <div className="bg-amber-50 pb-8">
            <Banner></Banner>
            <CraftItems></CraftItems>
+           <Subcategories></Subcategories>
            <ThingsYouLove></ThingsYouLove>
            <ContactUs></ContactUs>
         </div>

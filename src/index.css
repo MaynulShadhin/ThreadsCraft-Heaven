@@ -3,16 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-    --body_background: white;
-    --body_color: black;
-}
-
-[data-theme="dark"]{
-    --body_background: #282c34;
-    --body_color: white;
-}
-
 .font-roboto{
     font-family: "Roboto", sans-serif;
 }
