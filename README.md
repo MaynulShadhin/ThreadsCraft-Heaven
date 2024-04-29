@@ -1,5 +1,5 @@
 # ThreadsCraft-Heaven
-Live Site: (https://threadcrafts-haven-27fad.web.app/myArtAndCraft)
+Live Site: (https://threadcrafts-haven-27fad.web.app/)
 
 ## Selected Category: Textile Arts
 
