@@ -5,7 +5,7 @@ const Subcategories = () => {
     const [subCats, setSubCats] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/subcategory')
+        fetch('https://thread-crafts-haven-server.vercel.app/subcategory')
             .then(res => res.json())
             .then(data => {
                 setSubCats(data)

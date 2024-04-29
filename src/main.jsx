@@ -28,12 +28,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/item')
+        loader: () => fetch('https://thread-crafts-haven-server.vercel.app/item')
       },
       {
         path: "/All Art & craft Items",
         element: <AllArtAndCraft></AllArtAndCraft>,
-        loader: () => fetch('http://localhost:5000/item')
+        loader: () => fetch('https://thread-crafts-haven-server.vercel.app/item')
       },
       {
         path: "/register",
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/subcategory/:subcategory",
-        element: <FilteredSubCategory></FilteredSubCategory> 
+        element: <FilteredSubCategory></FilteredSubCategory>
       }
 
     ]

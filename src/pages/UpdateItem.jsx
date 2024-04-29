@@ -7,7 +7,7 @@ const UpdateItem = () => {
     const [item, setItem] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleItem/${id}`)
+        fetch(`https://thread-crafts-haven-server.vercel.app/singleItem/${id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)
@@ -32,7 +32,7 @@ const UpdateItem = () => {
 
         const updatedItem = { name, subcategory, description, price, rating, customization, time, stock, image }
 
-        fetch(`http://localhost:5000/singleItem/${_id}`, {
+        fetch(`https://thread-crafts-haven-server.vercel.app/singleItem/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

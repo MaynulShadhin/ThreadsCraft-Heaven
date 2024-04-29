@@ -25,7 +25,7 @@ const AddCraftItem = () => {
         const newItem = { name, subcategory, description, price, rating, customization, time, stock, image, email }
         console.log(newItem)
 
-        fetch('http://localhost:5000/item', {
+        fetch('https://thread-crafts-haven-server.vercel.app/item', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

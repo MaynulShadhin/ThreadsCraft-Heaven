@@ -18,9 +18,9 @@ const Banner = () => {
                 <SwiperSlide><img className='w-screen md:h-[800px] object-cover' src={slider4} alt="" /></SwiperSlide>
             </Swiper>
 
-            <div className='absolute md:top-48 lg:top-72 lg:left-[460px] z-10 text-center hidden md:block p-4'>
+            <div className='absolute md:top-48 md:left-[100px] lg:top-72 lg:left-[460px] z-10 text-center hidden md:block p-4'>
                 <Fade direction='down' triggerOnce={true}>
-                    <h2 className='text-7xl font-bold text-white'>Unveiling the beauty of textile <br /> <span className='text-amber-700'>
+                    <h2 className='md:text-5xl lg:text-7xl font-bold text-white'>Unveiling the beauty of textile <br /> <span className='text-amber-700'>
                         <Typewriter words={['arts online']} loop={5} cursor cursorStyle='_' typeSpeed={70}
                             deleteSpeed={50}
                             delaySpeed={1000}></Typewriter>

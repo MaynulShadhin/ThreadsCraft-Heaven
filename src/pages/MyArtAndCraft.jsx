@@ -13,17 +13,17 @@ const MyArtAndCraft = () => {
             setDisplayItems(items)
         }
         else if (filter === 'yes') {
-            const customizationYes = items.filter(item=>item.customization === 'Yes');
+            const customizationYes = items.filter(item => item.customization === 'Yes');
             setDisplayItems(customizationYes)
         }
-        else if(filter === 'no'){
-            const customizationNo = items.filter(item=>item.customization === "No");
+        else if (filter === 'no') {
+            const customizationNo = items.filter(item => item.customization === "No");
             setDisplayItems(customizationNo);
         }
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/item/${user?.email}`)
+        fetch(`https://thread-crafts-haven-server.vercel.app/item/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItems(data);
@@ -37,9 +37,9 @@ const MyArtAndCraft = () => {
             <div className="dropdown mb-4">
                 <div tabIndex={0} role="button" className="btn m-1 bg-amber-300 hover:bg-amber-400">Filter-customization</div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><button onClick={()=>handleItemFilter('all')}>All</button></li>
-                    <li><button onClick={()=>handleItemFilter('yes')}>Yes</button></li>
-                    <li><button onClick={()=>handleItemFilter('no')}>No</button></li>
+                    <li><button onClick={() => handleItemFilter('all')}>All</button></li>
+                    <li><button onClick={() => handleItemFilter('yes')}>Yes</button></li>
+                    <li><button onClick={() => handleItemFilter('no')}>No</button></li>
                 </ul>
             </div>
             <div className="grid grid-cols-1 gap-8">

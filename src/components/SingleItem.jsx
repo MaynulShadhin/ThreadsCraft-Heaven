@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 const SingleItem = ({ item }) => {
     return (
         <Fade direction='up'>
-            <div className="mx-4 rounded-md shadow-md dark:bg-base-100 dark:text-gray-800 h-full">
+            <div className="mx-4 rounded-md shadow-md dark:bg-amber-50 dark:text-gray-800 h-full">
                 <img src={item.image} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
                 <div className="flex flex-col justify-between p-6 space-y-8">
                     <div className="space-y-2">

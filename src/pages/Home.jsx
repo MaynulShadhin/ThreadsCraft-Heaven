@@ -6,7 +6,7 @@ import ThingsYouLove from "../components/ThingsYouLove";
 
 const Home = () => {
     return (
-        <div className="bg-amber-50 pb-8">
+        <div className="pb-8">
            <Banner></Banner>
            <CraftItems></CraftItems>
            <Subcategories></Subcategories>
