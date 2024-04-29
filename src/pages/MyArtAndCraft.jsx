@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/FirebaseProvider";
 import MySingleItem from "../components/MySingleItem";
+import { Helmet } from "react-helmet";
 
 const MyArtAndCraft = () => {
 
@@ -33,6 +34,10 @@ const MyArtAndCraft = () => {
 
     return (
         <div className="border-2 border-amber-500 m-8 p-4 lg:mx-80">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>ThreadsCrafts-Heaven | My Art and Crafts</title>
+            </Helmet>
             <h2 className="text-center text-3xl font-bold mb-8">My Art And Craft</h2>
             <div className="dropdown mb-4">
                 <div tabIndex={0} role="button" className="btn m-1 bg-amber-300 hover:bg-amber-400">Filter-customization</div>

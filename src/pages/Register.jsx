@@ -5,6 +5,7 @@ import { AuthContext } from "../provider/FirebaseProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const [error, setError] = useState('')
@@ -52,6 +53,10 @@ const Register = () => {
     }
     return (
         <div className="md:w-[450px] mx-2 md:mx-auto border-2 border-amber-500 px-12 py-4 mt-12 bg-amber-50">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>ThreadsCraft-Heaven | Register</title>
+            </Helmet>
             <div className="text-center mb-6">
                 <h2 className="text-5xl font-bold mb-4">Register</h2>
                 <p className="text-lg">Join, engage, connect, explore, discover, share, interact, community, updates, exclusive.</p>

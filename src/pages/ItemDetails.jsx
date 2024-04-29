@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 
 const ItemDetails = () => {
@@ -17,6 +18,10 @@ const ItemDetails = () => {
 
     return (
         <div className="container mx-auto border-2 border-amber-500 p-6 my-8">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Item Details</title>
+            </Helmet>
             <div>
                 <h1 className="text-5xl font-semibold mb-4">{name}</h1>
                 <p className="text-xl ml-2 mb-8">{subcategory}</p>

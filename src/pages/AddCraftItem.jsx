@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/FirebaseProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 const AddCraftItem = () => {
 
@@ -43,6 +44,10 @@ const AddCraftItem = () => {
 
     return (
         <div className="bg-amber-50 py-24 px-10 md:px-24 lg:px-96">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>ThreadCrafts-Haven | Add Craft Item</title>
+            </Helmet>
             <h2 className="text-4xl font-extrabold text-center mb-6">Add a Craft Item</h2>
             <form onSubmit={handleAddItem}>
                 <div className="md:flex mb-8">

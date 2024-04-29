@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../provider/FirebaseProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const [error, setError] = useState('')
@@ -57,6 +58,10 @@ const Login = () => {
 
     return (
         <div className="md:w-[450px] mx-2 md:mx-auto border-2 border-amber-500 px-12 py-4 mt-12 bg-amber-50">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>ThreadCrafts-Heaven | Login</title>
+            </Helmet>
             <div className="text-center mb-6">
                 <h2 className="text-5xl font-bold mb-4">Sign In</h2>
                 <p className="text-lg">Securely access your personalized account for exclusive content and updates</p>
