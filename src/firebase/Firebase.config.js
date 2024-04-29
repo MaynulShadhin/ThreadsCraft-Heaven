@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAsgzaLGJe0pxGRAYrbLCcqQ8K-HCFljUo",
-  authDomain: "threadcrafts-haven-27fad.firebaseapp.com",
-  projectId: "threadcrafts-haven-27fad",
-  storageBucket: "threadcrafts-haven-27fad.appspot.com",
-  messagingSenderId: "61641524366",
-  appId: "1:61641524366:web:fbe04d53b9e8ca16e975df"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
