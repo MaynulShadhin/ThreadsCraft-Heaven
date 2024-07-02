@@ -20,7 +20,9 @@ Provides robust mechanisms for users to give feedback and receive support, enhan
 
 * React js
 * Tailwind css
-* Daisyui
+* Flowbite-react
+* Node js
+* Mongodb
 
 
 ## Running the Project Locally
